@@ -41,14 +41,14 @@ app.get('/validation', (req, res) => {
 //app.post('/validation', urlencodedParser, [
 //    check('InputEmail', 'Email is not valid')
 //        .isEmail()
- //       .normalizeEmail()
- //       .exists()
+//       .normalizeEmail()
+//       .exists()
 //], (req, res) => {
 
 //    const errors = validationResult(req)
- //   if (!errors.isEmpty()) {
- //       return res.status(422).jsonp(errors.array())
- //   }
+//   if (!errors.isEmpty()) {
+//       return res.status(422).jsonp(errors.array())
+//   }
 //});
 
 
@@ -57,6 +57,8 @@ app.get('/validation', (req, res) => {
 app.get('/prijava', (req, res) => {
     res.render('prijava')
 });
+
+
 
 
 
