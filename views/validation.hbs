@@ -9,7 +9,7 @@
     </div>
 </div>
 <div class="container">
-    <form action="/validation" method="POST"></form>
+    <form action="/validation" method="POST" action="/registriraj_uporabnika" novalidate></form>
     <div class="row">
         <div class="col-2">
 
@@ -43,8 +43,8 @@
                 <input type="text" class="form-control" id="input_naslov">
             </div>
             <div class="mb-3 form-group">
-                <label for="občina" class="form-label">Občina</label>
-                <input type="text" class="form-control" id="input_občina">
+                <label for="posta" class="form-label">Pošta</label>
+                <input type="text" class="form-control" id="input_posta">
             </div>
             <div class="mb-3 form-group">
                 <label for="postna_stevilka" class="form-label">Poštna Številka</label>
@@ -65,10 +65,12 @@
         <div class="col-2">
 
         </div>
-        <div class="col">
+        <div class="col-2" id="val_btn">
             <button type="submit" class="btn btn-primary">Registracija</button>
         </div>
-
+        <div class="col" id="val_">
+            <i><a href="/prijava">Ze imate ustvarjen račun? Prijavite se.</a></i>
+        </div>
 
 
     </div>
