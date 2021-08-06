@@ -9,70 +9,69 @@
     </div>
 </div>
 <div class="container">
-    <form action="/validation" method="POST" action="/registriraj_uporabnika" novalidate></form>
-    <div class="row">
-        <div class="col-2">
-
-        </div>
-        <div class="col-4">
-
-            <div class="mb-3 form-group">
-                <label for="ime_uporabnika" class="form-label">Ime</label>
-                <input type="text" class="form-control" id="ime_uporabnika">
-            </div>
-            <div class="mb-3 form-group">
-                <label for="exampleInputEmail1" class="form-label">Priimek</label>
-                <input type="text" class="form-control" id="priimek_uporabnika">
-            </div>
-            <div class="mb-3 form-group">
-                <label for="exampleInputEmail1" class="form-label">Email naslov</label>
-                <input type="email" class="form-control" id="input_email">
-            </div>
-            <div class="mb-3 form-group">
-                <label for="exampleInputPassword" class="form-label">Geslo</label>
-                <input type="password" class="form-control" id="input_password">
-            </div>
-            <div class="mb-3 form-group">
-                <label for="InputPassword1" class="form-label">Potrditev gesla</label>
-                <input type="password1" class="form-control" id="input_password1">
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="mb-3 form-group">
-                <label for="naslov" class="form-label">Naslov</label>
-                <input type="text" class="form-control" id="input_naslov">
-            </div>
-            <div class="mb-3 form-group">
-                <label for="posta" class="form-label">Pošta</label>
-                <input type="text" class="form-control" id="input_posta">
-            </div>
-            <div class="mb-3 form-group">
-                <label for="postna_stevilka" class="form-label">Poštna Številka</label>
-                <input type="text" class="form-control" id="input_postna_stevilka">
-            </div>
-            <div class="mb-3 form-group">
-                <label for="drzava" class="form-label">Država</label>
-                <input type="text" class="form-control" id="input_postna_stevilka">
-            </div>
-
-            </form>
+    <form method="POST" action="/registriraj_uporabnika">
+        <div class="row">
             <div class="col-2">
 
             </div>
+            <div class="col-4">
+
+                <div class="mb-3 form-group">
+                    <label for="ime_uporabnika" class="form-label">Ime</label>
+                    <input name="ime" type="text" class="form-control" id="ime_uporabnika">
+                </div>
+                <div class="mb-3 form-group">
+                    <label for="exampleInputEmail1" class="form-label">Priimek</label>
+                    <input name="priimek" type="text" class="form-control" id="priimek_uporabnika">
+                </div>
+                <div class="mb-3 form-group">
+                    <label for="exampleInputEmail1" class="form-label">Email naslov</label>
+                    <input name="email" type="email" class="form-control" id="input_email">
+                </div>
+                <div class="mb-3 form-group">
+                    <label for="exampleInputPassword" class="form-label">Geslo</label>
+                    <input name="geslo" type="password" class="form-control" id="input_password">
+                </div>
+                <div class="mb-3 form-group">
+                    <label for="InputPassword1" class="form-label">Potrditev gesla</label>
+                    <input name="gesloHash" type="password1" class="form-control" id="input_password1">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="mb-3 form-group">
+                    <label for="naslov" class="form-label">Naslov</label>
+                    <input name="naslov" type="text" class="form-control" id="input_naslov">
+                </div>
+                <div class="mb-3 form-group">
+                    <label for="posta" class="form-label">Pošta</label>
+                    <input name="pošta" type="text" class="form-control" id="input_posta">
+                </div>
+                <div class="mb-3 form-group">
+                    <label for="postna_stevilka" class="form-label">Poštna Številka</label>
+                    <input name="poštna_številka" type="text" class="form-control" id="input_postna_stevilka">
+                </div>
+                <div class="mb-3 form-group">
+                    <label for="drzava" class="form-label">Država</label>
+                    <input name="ime_država" type="text" class="form-control" id="input_drzava">
+                </div>
+
+                <div class="col-2">
+
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-2">
+        <div class="row">
+            <div class="col-2">
+
+            </div>
+            <div class="col-2" id="val_btn">
+                <button type="submit" class="btn btn-primary">Registracija</button>
+            </div>
+            <div class="col" id="val_">
+                <i><a href="/prijava">Ze imate ustvarjen račun? Prijavite se.</a></i>
+            </div>
+
 
         </div>
-        <div class="col-2" id="val_btn">
-            <button type="submit" class="btn btn-primary">Registracija</button>
-        </div>
-        <div class="col" id="val_">
-            <i><a href="/prijava">Ze imate ustvarjen račun? Prijavite se.</a></i>
-        </div>
-
-
-    </div>
     </form>
 </div>

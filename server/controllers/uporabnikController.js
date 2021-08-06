@@ -1,4 +1,5 @@
 const mysql = require('mysql');
+const uporabnik = require('./../models/uporabnik')
 
 exports.view = (req, res) => {
     res.render('home');
@@ -16,7 +17,7 @@ exports.create = (req, res) => {
     // User the connection
     uporabnik.create(data, (err, rows) => {
         if (!err) {
-            res.render('/registriraj_uporabnika', { alert: 'User added successfully.' });
+            res.render('validation', { alert: 'User added successfully.' });
         } else {
             console.log(err);
         }
