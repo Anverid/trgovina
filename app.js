@@ -3,6 +3,7 @@ const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const { check, validationResult } = require('express-validator')
+const { authUser, authRole } = require('./basicAuth')
 
 
 require('dotenv').config();
@@ -58,6 +59,10 @@ app.get('/prijava', (req, res) => {
     res.render('prijava')
 });
 
+
+app.get('/admin_upo', authUser, authRole(admin.true), (req, res) => {
+    res.send('Dobrodošel Admin')
+})
 
 
 
