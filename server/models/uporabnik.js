@@ -11,3 +11,10 @@ exports.create = (data, callback) => {
         }
     );
 }
+
+exports.get = (callback) => {
+    connection.query('SELECT * FROM uporabnik ', (err, rows) => {
+        console.log('The data from user table: \n', rows);
+        callback(err, rows);
+    });
+}

@@ -7,10 +7,14 @@ router.get('', (req, res) => {
     res.render('home');
 });
 
+router.get('', (req, res) => {
+    res.render('admin_upo');
+});
+
 //routes
 router.get('/', uporabnikController.view);
 //router.post('/', userController.find);
-
+router.get('/admin_upo', uporabnikController.view);
 
 router.get('/registriraj_uporabnika', uporabnikController.form);
 router.post('/registriraj_uporabnika', uporabnikController.create);

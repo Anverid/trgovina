@@ -3,7 +3,7 @@ const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const { check, validationResult } = require('express-validator')
-const { authUser, authRole } = require('./basicAuth')
+//const { authUser, authRole } = require('./basicAuth')
 
 
 require('dotenv').config();
@@ -59,12 +59,46 @@ app.get('/prijava', (req, res) => {
     res.render('prijava')
 });
 
-
-app.get('/admin_upo', authUser, authRole(admin.true), (req, res) => {
+app.get('/admin_upo', (req, res) => {
+    res.render('admin_upo')
+});
+/*app.get('/admin_upo', authUser, authRole(admin.true), (req, res) => {
     res.send('Dobrodošel Admin')
 })
+*/
+
+app.get('/dostava', (req, res) => {
+    res.render('dostava')
+});
+
+app.get('/o_nas', (req, res) => {
+    res.render('o_nas')
+});
 
 
+
+
+app.get('/vsi_izdelki', (req, res) => {
+    res.render('vsi_izdelki')
+});
+app.get('/zelenjava', (req, res) => {
+    res.render('zelenjava')
+});
+app.get('/sadje', (req, res) => {
+    res.render('sadje')
+});
+app.get('/zabojcki', (req, res) => {
+    res.render('zabojcki')
+});
+app.get('/zacimbe', (req, res) => {
+    res.render('zacimbe')
+});
+app.get('/pijace', (req, res) => {
+    res.render('pijace')
+});
+app.get('/drugo', (req, res) => {
+    res.render('drugo')
+});
 
 
 const routes = require('./server/routes/uporabnik');
