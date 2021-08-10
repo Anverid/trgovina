@@ -34,6 +34,9 @@ app.get('', (req, res) => {
     res.render('home')
 });
 
+app.get('/home', (req, res) => {
+    res.render('home')
+});
 
 app.get('/validation', (req, res) => {
     res.render('validation')
@@ -96,6 +99,9 @@ app.get('/zacimbe', (req, res) => {
 app.get('/pijace', (req, res) => {
     res.render('pijace')
 });
+app.get('/namazi', (req, res) => {
+    res.render('namazi')
+});
 app.get('/drugo', (req, res) => {
     res.render('drugo')
 });
@@ -103,5 +109,7 @@ app.get('/drugo', (req, res) => {
 
 const routes = require('./server/routes/uporabnik');
 app.use('/', routes);
+
+
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
