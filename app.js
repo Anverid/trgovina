@@ -107,8 +107,10 @@ app.get('/drugo', (req, res) => {
 });
 
 
-const routes = require('./server/routes/uporabnik');
-app.use('/', routes);
+const routerUporabnik = require('./server/routes/uporabnik');
+app.use('/', routerUporabnik);
+const routerProdukt = require('./server/routes/produkt');
+app.use('/', routerProdukt);
 
 
 
