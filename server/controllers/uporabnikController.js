@@ -1,5 +1,6 @@
 const mysql = require('mysql');
 const uporabnik = require('./../models/uporabnik')
+const { validationResult } = require('express-validator')
 
 exports.view = (req, res) => {
     res.render('home');
@@ -15,6 +16,16 @@ exports.create = (req, res) => {
     } = req.body;
     const data = { ime, priimek, email, gesloHash, naslov, pošta, poštna_številka, ime_država };
     // User the connection
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+        //       return res.status(422).jsonp(errors.array())
+        const alert = errors.array()
+        console.log(alert)
+        res.render('validation', {
+            alert
+        })
+        return;
+    }
     uporabnik.create(data, (err, rows) => {
         if (!err) {
             res.render('validation', { alert: 'User added successfully.' });
@@ -25,12 +36,13 @@ exports.create = (req, res) => {
 }
 
 
+
 // View Users
 exports.view = (req, res) => {
     // User the connection
     uporabnik.get((err, rows) => {
         if (!err) {
-            //            let removedUser = req.query.removed;
+            console.log(rows)
             res.render('admin_upo', { rows, /*removedUser */ });
         } else {
             console.log(err);

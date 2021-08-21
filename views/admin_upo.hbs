@@ -7,17 +7,14 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
                             <th scope="col">Id</th>
                             <th scope="col">Ime</th>
                             <th scope="col">Priimek</th>
                             <th scope="col">Email</th>
-                            <th scope="col">GesloHash</th>
                             <th scope="col">Naslov</th>
                             <th scope="col">Pošta</th>
                             <th scope="col">Poštna Številka</th>
                             <th scope="col">Država</th>
-                            <th scope="col">Admin</th>
                             <th scope="col">Akcija</th>
                         </tr>
                     </thead>
@@ -30,12 +27,10 @@
                             <td>{{this.ime}}</td>
                             <td>{{this.priimek}}</td>
                             <td>{{this.email}}</td>
-                            <td>{{this.gesloHash}}</td>
                             <td>{{this.naslov}}</td>
                             <td>{{this.pošta}}</td>
                             <td>{{this.poštna_številka}}</td>
                             <td>{{this.ime_država}}</td>
-                            <td>{{this.admin}}</td>
                             <td><a href="#" type="button" style="btn btn-light btn-small"><i class="bi bi-eye"></i>
                                     View</a>
                                 <a href="#" type="button" style="btn btn-light btn-small"><i class="bi bi-pencil"></i>
@@ -45,11 +40,7 @@
                             </td>
                         </tr>
 
-                        <tr>
-                            <th scope="row">3</th>
-                            <td></td>
-                            <td></td>
-                        </tr>
+
 
                         {{/each}}
 
