@@ -69,9 +69,8 @@ app.get('/o_nas', (req, res) => {
 
 
 
-app.get('/vsi_izdelki', (req, res) => {
-    res.render('vsi_izdelki')
-});
+
+
 app.get('/zelenjava', (req, res) => {
     res.render('zelenjava')
 });

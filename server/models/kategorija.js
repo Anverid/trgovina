@@ -6,3 +6,13 @@ exports.get = (callback) => {
         callback(err, rows);
     });
 }
+
+exports.find = (id, callback) => {
+    connection.query('SELECT * FROM produkt_kategorija WHERE id_produkt_kat = ?;',
+        [id],
+        (err, rows) => {
+            console.log('The data from produkt_kategorija table: \n', rows);
+            callback(err, rows);
+        }
+    );
+}

@@ -1,19 +1,31 @@
 const mysql = require('mysql');
 const produkt = require('../models/produkt')
+const kategorija = require('../models/kategorija');
 
 
-
-exports.view = (req, res) => {
-    res.render('/vsi_produkti');
-}
 
 
 
 exports.view = (req, res) => {
-    // User the connection
+    console.log(req.query.kategorija)
     produkt.get((err, rows) => {
         if (!err) {
-            res.render('vsi_produkti', { rows });
+            let ime_kategorija = 'Vsi izdelki';
+            let izdelki = rows;
+            if (req.query.kategorija) {
+                izdelki = rows.filter(row => req.query.kategorija == row.id_produkt_kat)
+                kategorija.find(req.query.kategorija, (err, rows) => {
+                    if (err) {
+                        console.log(err);
+                        return;
+                    }
+                    let row = rows[0];
+                    ime_kategorija = row.ime_kategorija;
+                    res.render('vsi_izdelki', { ime_kategorija, rows: izdelki });
+                });
+                return;
+            }
+            res.render('vsi_izdelki', { ime_kategorija, rows: izdelki });
         } else {
             console.log(err);
         }

@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-2">
-            <h1>Vsi izdelki</h1>
+            <h1>{{ ime_kategorija }}</h1>
         </div>
     </div>
 </div>
@@ -13,111 +13,32 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/home">Domov</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Vsi Izdelki</li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ ime_kategorija }}</li>
                 </ol>
             </nav>
         </div>
     </div>
 </div>
 
-<div class="row">
-    <div class="col-2">
+<div class="container">
+    <div class="row gy-4">
 
-    </div>
-    <div class="col-2">
-        <div class="card" style="width: 18rem;">
-            <img src="../slike_razno/test_slika1.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">...</h5>
-                <p class="card-text">...</p>
-                <a href="/vsi_izdelki" class="btn btn-primary">...</a>
+        {{#each rows}}
+        <div class="col-3">
+            <div class="card">
+                <img src="../slike_razno/test_slika1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.ime_produkta}}</h5>
+                    <p class="card-text">{{this.opis_produkta}}</p>
+                    <a href="/vsi_izdelki" class="btn btn-primary">...</a>
+                </div>
             </div>
         </div>
+        {{/each}}
     </div>
-    <div class="col-2">
-        <div class="card" style="width: 18rem;">
-            <img src="../slike_razno/test_slika1.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">...</h5>
-                <p class="card-text">...</p>
-                <a href="/zelenjava" class="btn btn-primary">...</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-2">
-        <div class="card" style="width: 18rem;">
-            <img src="../slike_razno/test_slika1.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">...</h5>
-                <p class="card-text">...</p>
-                <a href="/sadje" class="btn btn-primary">...</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-2">
-        <div class="card" style="width: 18rem;">
-            <img src="../slike_razno/test_slika1.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">...</h5>
-                <p class="card-text">....</p>
-                <a href="/zabojcki" class="btn btn-primary">...</a>
-            </div>
-        </div>
-    </div>
-</div>
 </div>
 
 
 
-<div class="row">
-    <div class="col-2">
 
-    </div>
-    <div class="col-2">
-        <div class="card" style="width: 18rem;">
-            <img src="../slike_razno/test_slika1.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">...</h5>
-                <p class="card-text">...</p>
-                <a href="/zacimbe" class="btn btn-primary">...</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-2">
-        <div class="card" style="width: 18rem;">
-            <img src="../slike_razno/test_slika1.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">...</h5>
-                <p class="card-text">...</p>
-                <a href="/namazi" class="btn btn-primary">...</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-2">
-        <div class="card" style="width: 18rem;">
-            <img src="../slike_razno/test_slika1.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">...</h5>
-                <p class="card-text">....</p>
-                <a href="/pijace" class="btn btn-primary">...</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-2">
-        <div class="card" style="width: 18rem;">
-            <img src="../slike_razno/test_slika1.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">...</h5>
-                <p class="card-text">...</p>
-                <a href="/drugo" class="btn btn-primary">...</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-2">
-
-    </div>
-</div>
-</div>
 </body>
-</div>
-</div>
