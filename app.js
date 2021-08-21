@@ -3,7 +3,7 @@ const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const { check, validationResult } = require('express-validator')
-//const { authUser, authRole } = require('./basicAuth')
+
 
 
 require('dotenv').config();
@@ -28,6 +28,8 @@ app.engine('hbs', exphbs({ extname: '.hbs' }));
 app.set('view engine', 'hbs');
 
 
+const urlencodedParser = bodyParser.urlencoded({ extended: false })
+
 // Navigation
 
 app.get('', (req, res) => {
@@ -42,18 +44,26 @@ app.get('/validation', (req, res) => {
     res.render('validation')
 });
 
-//app.post('/validation', urlencodedParser, [
-//    check('InputEmail', 'Email is not valid')
-//        .isEmail()
-//       .normalizeEmail()
-//       .exists()
-//], (req, res) => {
+app.post('/validation', urlencodedParser, [
+    check('email', 'Email is not valid')
+        .isEmail()
+        .normalizeEmail()
+        .exists(),
+    check('ime', 'Ime neprimerno')
+        .exists()
+        .isLength({ min: 3 })
+], (req, res) => {
 
-//    const errors = validationResult(req)
-//   if (!errors.isEmpty()) {
-//       return res.status(422).jsonp(errors.array())
-//   }
-//});
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+        //       return res.status(422).jsonp(errors.array())
+        const alert = errors.array()
+
+        res.render('validation', {
+            alert
+        })
+    }
+});
 
 
 
