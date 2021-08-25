@@ -71,7 +71,7 @@ app.get('/o_nas', (req, res) => {
 
 
 
-app.get('/zelenjava', (req, res) => {
+/*app.get('/zelenjava', (req, res) => {
     res.render('zelenjava')
 });
 app.get('/sadje', (req, res) => {
@@ -92,7 +92,7 @@ app.get('/namazi', (req, res) => {
 app.get('/drugo', (req, res) => {
     res.render('drugo')
 });
-
+*/
 
 const routerUporabnik = require('./server/routes/uporabnik');
 app.use('/', routerUporabnik);

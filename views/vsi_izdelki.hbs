@@ -12,7 +12,7 @@
         <div class="col-2">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/home">Domov</a></li>
+                    <li class="breadcrumb-item"><a href="/">Domov</a></li>
                     <li class="breadcrumb-item active" aria-current="page">{{ ime_kategorija }}</li>
                 </ol>
             </nav>
@@ -26,11 +26,11 @@
         {{#each rows}}
         <div class="col-3">
             <div class="card">
-                <img src="../slike_razno/test_slika1.jpg" class="card-img-top" alt="...">
+                <img src="../slike_izdelki/{{ this.slika_produkta }}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{this.ime_produkta}}</h5>
                     <p class="card-text">{{this.opis_produkta}}</p>
-                    <a href="/vsi_izdelki" class="btn btn-primary">...</a>
+                    <a href="/vsi_izdelki" class="btn btn-primary">Kupi Izdelek</a>
                 </div>
             </div>
         </div>
