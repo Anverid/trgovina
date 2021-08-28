@@ -30,7 +30,7 @@ app.set('view engine', 'hbs');
 
 
 
-// Navigation
+// Navigation 
 
 app.get('', kategorijaController.view);
 
