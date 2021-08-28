@@ -96,3 +96,69 @@ TAKE 2
 
 
 
+
+
+
+
+
+
+
+
+<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Izdelki
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="vsi_izdelki">Vsi Izdelki</a></li>
+                            <li><a class="dropdown-item" href="/zelenjava">Zelenjava</a></li>
+                            <li><a class="dropdown-item" href="/sadje">Sadje</a></li>
+                            <li><a class="dropdown-item" href="/zabojcki">Zabojcki</a></li>
+                            <li><a class="dropdown-item" href="zacimbe">Zacimbe</a></li>
+                            <li><a class="dropdown-item" href="zacimbe">Namazi</a></li>
+                            <li><a class="dropdown-item" href="zacimbe">Pijace</a></li>
+                            <li><a class="dropdown-item" href="/drugo">Drugo</a></li>
+
+                        </ul>
+                    </li>
+
+
+
+
+
+
+
+
+
+/*app.get('/zelenjava', (req, res) => {
+    res.render('zelenjava')
+});
+app.get('/sadje', (req, res) => {
+    res.render('sadje')
+});
+app.get('/zabojcki', (req, res) => {
+    res.render('zabojcki')
+});
+app.get('/zacimbe', (req, res) => {
+    res.render('zacimbe')
+});
+app.get('/pijace', (req, res) => {
+    res.render('pijace')
+});
+app.get('/namazi', (req, res) => {
+    res.render('namazi')
+});
+app.get('/drugo', (req, res) => {
+    res.render('drugo')
+});
+*/
+
+
+
+
+
+
+
+
+
+
