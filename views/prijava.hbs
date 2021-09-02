@@ -1,4 +1,10 @@
 <div class="container">
+    {{#if alert}}
+    <div class="alert alert-warning alert-dismissible fade show" ,"col-4" role="alert">
+        {{alert}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {{/if}}
     <form method="POST" action="/prijavi_uporabnika">
         <div class="row">
             <div class="col-4">
@@ -11,11 +17,11 @@
                 </div>
                 <div class="mb-4">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="geslo">
+                    <input type="email" class="form-control" id="email" name="email">
                 </div>
                 <div class="mb-4">
                     <label for="geslo" class="form-label">Geslo</label>
-                    <input type="password" class="form-control" id="geslo">
+                    <input type="password" class="form-control" id="geslo" name="geslo">
                 </div>
                 <button type="submit" class="btn btn-primary">Prijava</button>
             </div>

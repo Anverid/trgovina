@@ -1,9 +1,12 @@
 require('dotenv').config();
+
 const express = require('express');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const { check, validationResult } = require('express-validator')
+const session = require('express-session');
+
 const kategorijaController = require('./server/controllers/kategorijaController');
 
 
@@ -27,8 +30,15 @@ app.use(express.static('public'));
 app.engine('hbs', exphbs({ extname: '.hbs' }));
 app.set('view engine', 'hbs');
 
+// Session - authentication
+app.use(session({ secret: process.env.SESSION_SECRET }))
 
-
+// Add logged in user to locals
+app.use((req, res, next) => {
+    res.locals.loggedIn = req.session.loggedIn;
+    res.locals.user = req.session.user;
+    next();
+});
 
 // Navigation 
 
@@ -43,6 +53,11 @@ app.get('/validation', (req, res) => {
 app.get('/prijava', (req, res) => {
     res.render('prijava')
 });
+app.get('/odjava', (req, res) => {
+    req.session.destroy((err) => {
+        res.redirect('/');
+    });
+})
 app.get('/dostava', (req, res) => {
     res.render('dostava')
 });

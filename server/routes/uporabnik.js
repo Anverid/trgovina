@@ -28,7 +28,7 @@ router.post('/registriraj_uporabnika', urlencodedParser, [
         .isLength({ min: 3 }),
     check('email', 'Email ni primeren')
         .isEmail()
-        .normalizeEmail()
+        // .normalizeEmail()
         .exists()
         .trim(),
     check('geslo', 'Geslo ni primerno')
@@ -60,6 +60,9 @@ router.post('/registriraj_uporabnika', urlencodedParser, [
 
 ], uporabnikController.create);
 
+
+
+router.post('/prijavi_uporabnika', uporabnikController.login);
 
 
 
