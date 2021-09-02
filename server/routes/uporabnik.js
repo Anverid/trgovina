@@ -34,33 +34,32 @@ router.post('/registriraj_uporabnika', urlencodedParser, [
     check('geslo', 'Geslo ni primerno')
         .isLength({ min: 6 }),
     check('gesloHash', 'Geslo se ne ujema')
+        .custom((value, { req }) => {
+            if (value !== req.body.geslo) {
+                throw new Error("Geslo se ne ujema");
+            } else {
+                return value;
+            }
+        })
         .exists()
         .trim(),
-    //   .isHash(str, algorithm) ['md4', 'md5', 'sha1', 'sha256', 'sha384', 'sha512', 'ripemd128', 'ripemd160', 'tiger128', 'tiger160', 'tiger192', 'crc32', 'crc32b']
     check('naslov', 'Naslov neprimeren')
-        .exists()
         .isLength({ min: 3 })
         .trim(),
     check('pošta', 'Pošta ni primerna')
-
+        .exists()
         .trim(),
     check('poštna_številka', 'Poštna številka ni primerna')
-        .isNumeric()
-        .isLength({ min: 4 })
-        .isLength({ min: 4 })
+        .isPostalCode('SI')
+        //       .isIn(str, values)
         .trim(),
     check('ime_država', 'Ime Države ni pravo, Vpiši Slovenija')
-        //.equals(Slovenija, comparison)
-        // .equals(slovenija, comparison)
-        .trim(),
+
 
 
 
 ], uporabnikController.create);
-//router.get('/edituser/:id', userController.edit);
-//router.post('/edituser/:id', userController.update);
-//router.get('/viewuser/:id', userController.viewall);
-//router.get('/deleteuser/:id',userController.delete);
+
 
 
 

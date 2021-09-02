@@ -12,9 +12,9 @@ exports.form = (req, res) => {
 
 // Add new user
 exports.create = (req, res) => {
-    const { ime, priimek, email, gesloHash, naslov, pošta, poštna_številka, ime_država
+    const { ime, priimek, email, gesloHash, naslov, pošta, poštna_številka
     } = req.body;
-    const data = { ime, priimek, email, gesloHash, naslov, pošta, poštna_številka, ime_država };
+    const data = { ime, priimek, email, gesloHash, naslov, pošta, poštna_številka, ime_država: "Slovenija" };
     // User the connection
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
@@ -28,9 +28,13 @@ exports.create = (req, res) => {
     }
     uporabnik.create(data, (err, rows) => {
         if (!err) {
-            res.render('validation', { alert: 'User added successfully.' });
+            res.render('validation', { alert: [{ msg: 'Uspešna registracija.' }] });
         } else {
             console.log(err);
+            if (err.code == "ER_DUP_ENTRY") {
+                res.render('validation', { alert: [{ msg: 'Ta email že obstaja.' }] });
+
+            }
         }
     });
 }
