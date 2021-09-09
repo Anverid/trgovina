@@ -31,3 +31,15 @@ exports.view = (req, res) => {
         }
     });
 }
+
+
+exports.add_to_cart = (req, res) => {
+    console.log(req.body)
+    if (!Array.isArray(req.session.kosarica)) {
+        req.session.kosarica = []
+    }
+    const { izdelek_id, kosarica } = req.body;
+    req.session.kosarica.push({ izdelek_id, kosarica });
+    const prev_url = req.get('Referrer');
+    res.redirect(prev_url);
+}

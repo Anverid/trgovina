@@ -57,6 +57,9 @@
                 {{#if user}}
                 <span>Prijavljen kot <b>{{user.ime}} {{user.priimek}}</b></span>
                 {{/if}}
+                {{#if kosarica.length}}
+                <span><i class="bi bi-cart"></i><b>{{kosarica.length}}</b></span>
+                {{/if}}
             </div>
         </div>
     </nav>

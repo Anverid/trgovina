@@ -30,7 +30,12 @@
                 <div class="card-body">
                     <h5 class="card-title">{{this.ime_produkta}}</h5>
                     <p class="card-text">{{this.opis_produkta}}</p>
-                    <a href="/vsi_izdelki" class="btn btn-primary">Kupi Izdelek</a>
+                    {{!-- <a href="/vsi_izdelki" class="btn btn-primary">Dodaj v košarico</a> --}}
+                    <form action="dodaj_v_kosarico" method="POST" class="dodaj-kosarica-form">
+                        <input type="hidden" class="kolicina" name="kolicina">
+                        <input type="hidden" class="izdelek_id" name="izdelek_id" value="{{this.id}}">
+                        <button type="submit" class="btn btn-primary">Dodaj v košarico</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -38,7 +43,24 @@
     </div>
 </div>
 
-
+<script>
+    document.querySelectorAll('.dodaj-kosarica-form').forEach(form => {
+        form.addEventListener("submit", event => {
+            console.log(event);
+            const kolicina = prompt("Prosim vnesite količino idelkov (v 100gramih", "1");
+            const kolicina_int = parseInt(kolicina);
+            console.log(kolicina_int)
+            if (isNaN(kolicina_int)) {
+                event.preventDefault()
+            }
+            else {
+                const form = event.target;
+                const kolicina_input = form.querySelector('.kolicina');
+                kolicina_input.value = kolicina_int;
+            }
+        });
+    });
+</script>
 
 
 </body>
