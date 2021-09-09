@@ -25,7 +25,8 @@ router.post('/registriraj_uporabnika', urlencodedParser, [
         .isLength({ min: 3 })
         .trim(),
     check('priimek', 'Priimek neprimeren')
-        .isLength({ min: 3 }),
+        .isLength({ min: 3 })
+        .trim(),
     check('email', 'Email ni primeren')
         .isEmail()
         // .normalizeEmail()
@@ -41,8 +42,7 @@ router.post('/registriraj_uporabnika', urlencodedParser, [
                 return value;
             }
         })
-        .exists()
-        .trim(),
+        .exists(),
     check('naslov', 'Naslov neprimeren')
         .isLength({ min: 3 })
         .trim(),
