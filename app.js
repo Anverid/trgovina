@@ -67,7 +67,12 @@ app.get('/dostava', (req, res) => {
 app.get('/o_nas', (req, res) => {
     res.render('o_nas')
 });
-
+app.get('/kosarica', (req, res) => {
+    res.render('kosarica')
+});
+app.get('/narocilo', (req, res) => {
+    res.render('narocilo')
+});
 
 
 

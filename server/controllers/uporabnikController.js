@@ -18,7 +18,6 @@ exports.create = (req, res) => {
 
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
-        //       return res.status(422).jsonp(errors.array())
         const alert = errors.array()
         console.log(alert)
         res.render('validation', {

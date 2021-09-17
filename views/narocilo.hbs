@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row">
+        <div>
+            <div class="mb-4">
+            </div>
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Vrsta pošiljke</th>
+                            <th scope="col">Črtna koda</th>
+                            <th scope="col">Naziv</th>
+                            <th scope="col">Dodaten naziv</th>
+                            <th scope="col">Naslov</th>
+                            <th scope="col">PoštnaŠtevilka</th>
+                            <th scope="col">Pošta</th>
+                            <th scope="col">Država</th>
+                            <th scope="col">TelŠt</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">IdNas</th>
+                            <th scope="col">Opomba</th>
+                            <th scope="col">Masa</th>
+                            <th scope="col">DodatneStoritve</th>
+                            <th scope="col">Odkupnina</th>
+                            <th scope="col">Vrednost</th>
+                            <th scope="col">VrstaVplDok</th>
+                            <th scope="col">RefX</th>
+                            <th scope="col">Model</th>
+                            <th scope="col">Sklic</th>
+                            <th scope="col">Namen</th>
+                            <th scope="col">OdkvValuti</th>
+                            <th scope="col">Valuta</th>
+                            <th scope="col">Navodilo</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {{#each rows}}
+
+                        <tr>
+                            <th scope="row">{{this.id}}</th>
+                            <td>{{this.ime}}</td>
+                            <td>{{this.priimek}}</td>
+                            <td>{{this.email}}</td>
+                            <td>{{this.naslov}}</td>
+                            <td>{{this.pošta}}</td>
+                            <td>{{this.poštna_številka}}</td>
+                            <td>{{this.ime_država}}</td>
+
+                        </tr>
+
+
+
+                        {{/each}}
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
