@@ -33,3 +33,24 @@
         </div>
     </div>
 </div>
+<div class="container">
+    <div class="row gy-4">
+        {{#each rows}}
+        <div class="col-3">
+            <div class="card">
+                <img src="../slike_izdelki/{{ this.slika_produkta }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.ime_produkta}}</h5>
+                    <p class="card-text">{{this.opis_produkta}} - {{this.kolicina}}x</p>
+                    {{!-- <a href="/vsi_izdelki" class="btn btn-primary">Dodaj v košarico</a> --}}
+                    <form action="odstrani_iz_kosarice" method="POST" class="dodaj-kosarica-form">
+                        <input type="hidden" class="kolicina" name="kolicina" value="{{this.kolicina}}">
+                        <input type="hidden" class="izdelek_id" name="izdelek_id" value="{{this.id}}">
+                        <button type="submit" class="btn btn-danger">Odstrani</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

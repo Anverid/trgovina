@@ -67,9 +67,6 @@ app.get('/dostava', (req, res) => {
 app.get('/o_nas', (req, res) => {
     res.render('o_nas')
 });
-app.get('/kosarica', (req, res) => {
-    res.render('kosarica')
-});
 app.get('/narocilo', (req, res) => {
     res.render('narocilo')
 });
@@ -85,6 +82,7 @@ app.use('/', routerUporabnik);
 const routerProdukt = require('./server/routes/produkt');
 const { post } = require('./server/routes/uporabnik');
 app.use('/', routerProdukt);
+app.use('/admin/', require('./server/routes/admin'))
 
 
 
