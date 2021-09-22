@@ -16,6 +16,11 @@ const sessionStore = new MySQLStore({}, connection);
 const app = express();
 const port = process.env.PORT || 4000;
 
+const dayjs = require('dayjs')
+require('dayjs/locale/sl')
+dayjs.locale("sl")
+//dayjs().format()
+
 // Parsing middleware
 // Parse application/x-www-form-urlencoded
 // app.use(bodyParser.urlencoded({ extended: false }));
@@ -43,6 +48,12 @@ app.use((req, res, next) => {
     next();
 });
 
+
+
+
+
+
+
 // Navigation 
 
 app.get('', kategorijaController.view);
@@ -66,12 +77,6 @@ app.get('/dostava', (req, res) => {
 });
 app.get('/o_nas', (req, res) => {
     res.render('o_nas')
-});
-app.get('/narocilo', (req, res) => {
-    res.render('narocilo')
-});
-app.get('/pregled_nar_upo', (req, res) => {
-    res.render('pregled_nar_upo')
 });
 app.get('/pregled_nar_adm', (req, res) => {
     res.render('pregled_nar_adm')

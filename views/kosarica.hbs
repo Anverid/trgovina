@@ -62,8 +62,22 @@
         </div>
         <div class="col-2">
             <div>
-                <button type="button" class="btn btn-primary">Kupi izdelke</button>
+                <form action="oddaj_narocilo" method="POST" class="oddaj_narocilo_form">
+                    <button type="submit" class="btn btn-primary">Kupi izdelke</button>
+                </form>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    document.querySelectorAll('.oddaj_narocilo_form').forEach(form => {
+        form.addEventListener("submit", event => {
+            console.log(event);
+            const potrdilo = confirm("Ali želite oddati naročilo?");
+            if (!potrdilo) {
+                event.preventDefault()
+            }
+        });
+    });
+</script>

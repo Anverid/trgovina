@@ -1,15 +1,15 @@
 # Things to do
 
 - [ ] Košarica
-  - [ ] User interface
+  - [ ] User interfacem CENE izdelkov
     - [x] Gumb ki te vrže na pregled košarice
     - [ ] Pregled košarice
       - [ ] Stvari ki jih boš kupil
         - [x] Možnost odstranjevanja izdelka iz košarice
       - [ ] Tvoj naslov
-      - [ ] Gumb potrdi
-        - [ ] Pretvori košarico v naročilo
-        - [ ] Vrže na pregled naročil
+      - [x] Gumb potrdi
+        - [x] Pretvori košarico v naročilo
+        - [x] Vrže na pregled naročil
     - [x] Vprašaj po količini izdelka ki ga želiš dodati v košarico
   - [x] Shrani stvari na session
     - [x] Uporabi MySQL za session namesto memory?
@@ -20,10 +20,10 @@
     narocila_izdelki(id_narocilo, id_izdelek, kolicina)
     ```
     - [x] Kreiranje tabel
-    - [ ] Foreign keyi
+    - [x] Foreign keyi
   - [ ] Pregled naročil za odpremljanje za admina
     - [ ] Export naročila za espremnico
-  - [ ] Pregled oddanih naročil / statusa za uporabnika
+  - [x] Pregled oddanih naročil / statusa za uporabnika
     - [ ] Če še ni bilo odposlano / plačano, pokaži ob naročilu podatke za TRR?
 - [ ] Izdelki
 	- [ ] Prikaži ceno (na 100g)

@@ -53,11 +53,10 @@
                             <th scope="col">Naslov</th>
                             <th scope="col">Poštna številka</th>
                             <th scope="col">Cena</th>
-                            <th scope="col">Je plačano?</th>
-                            <th scope="col">Je odposlano</th>
+                            <th scope="col">Datum naročila</th>
+                            <th scope="col">Datum plačila </th>
+                            <th scope="col">Datum odprema</th>
                             <th scope="col">Izdelki v košarici</th>
-
-
 
                         </tr>
                     </thead>
@@ -72,8 +71,16 @@
                             <td>{{this.naslov}}</td>
                             <td>{{this.poštna_številka}}</td>
                             <td>{{this.cena}}</td>
-                            <td>{{this.je_placano}}</td>
-                            <td>{{this.je_odposlano}}</td>
+                            <td>{{this.datum_narocila_str}}</td>
+                            <td>{{this.datum_placila_str}}</td>
+                            <td>{{this.datum_odprema_str}}</td>
+                            <td>
+                                <ul>
+                                    {{#each this.izdelki}}
+                                    <li>{{this.kolicina}}x {{this.ime}}</li>
+                                    {{/each}}
+                                </ul>
+                            </td>
 
                         </tr>
 

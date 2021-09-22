@@ -14,7 +14,7 @@ router.post('/odstrani_iz_kosarice', produktController.remove_from_cart);
 
 router.get('/kosarica', produktController.show_cart);
 
-
+router.post('/oddaj_narocilo', produktController.make_order);
 
 
 module.exports = router;

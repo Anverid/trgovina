@@ -10,8 +10,8 @@ router.use((req, res, next) => {
     }
 });
 
-router.get('/admin_upo', adminController.view);
-
+router.get('/admin_upo', adminController.view_user);
+router.get('/narocilo', adminController.view_ord);
 
 
 module.exports = router;

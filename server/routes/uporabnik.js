@@ -63,6 +63,8 @@ router.post('/registriraj_uporabnika', urlencodedParser, [
 
 router.post('/prijavi_uporabnika', uporabnikController.login);
 
+router.get('/pregled_nar_upo', uporabnikController.view_orders);
+
 
 
 module.exports = router;

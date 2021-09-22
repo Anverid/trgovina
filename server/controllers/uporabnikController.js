@@ -1,5 +1,6 @@
 const mysql = require('mysql');
 const uporabnik = require('./../models/uporabnik')
+const narocilo = require('./../models/narocilo')
 const { validationResult } = require('express-validator')
 
 exports.view = (req, res) => {
@@ -53,10 +54,32 @@ exports.login = (req, res) => {
             res.render('prijava', { alert: 'Uporabnik ne obstaja ali pa se geslo ne ujema.' });
         } else {
             console.log(err);
-            if (err.code == "ER_DUP_ENTRY") {
-                res.render('validation', { alert: [{ msg: 'Ta email že obstaja.' }] });
+            res.render('prijava', { alert: 'Prišlo je do napake pri prijavi.' });
+        }
+    });
+}
 
+exports.view_orders = (req, res) => {
+    const user = res.locals.user;
+    if (!user || !res.locals.loggedIn) {
+        res.render('prijava', { alert: 'Za pregled naročil morate biti prijavljeni v vaš račun.' });
+        return;
+    }
+
+    narocilo.get((err, vsa_narocila) => {
+        if (!err) {
+            // Filtriraj na samo uporabnikova naročila!
+            const narocila_uporabnika = [];
+            for (const narocilo of vsa_narocila) {
+                if (narocilo.id_narocnik == user.id) {
+                    narocila_uporabnika.push(narocilo);
+                }
             }
+            const rows = narocila_uporabnika;
+
+            res.render('pregled_nar_upo', { rows, /*removedUser */ });
+        } else {
+            console.log(err);
         }
     });
 }
