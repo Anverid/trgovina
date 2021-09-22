@@ -14,12 +14,12 @@
   - [x] Shrani stvari na session
     - [x] Uporabi MySQL za session namesto memory?
 - [ ] Naročila
-  - [ ] Tabela v bazi
+  - [x] Tabela v bazi
     ```
     narocila(id, id_narocnik, cena, je_placano, je_odposlano)
     narocila_izdelki(id_narocilo, id_izdelek, kolicina)
     ```
-    - [ ] Kreiranje tabel
+    - [x] Kreiranje tabel
     - [ ] Foreign keyi
   - [ ] Pregled naročil za odpremljanje za admina
     - [ ] Export naročila za espremnico
@@ -32,5 +32,5 @@
   - [ ] Naročila
   - [ ] Seznam uporabnikov?
   - [ ] Urejanje produktov?
-- [ ] GDPR / cookie popup?
+- [ ] GDPR / cookie popup?         https://openbase.com/js/react-cookie-consent 
 

@@ -1,0 +1,94 @@
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+
+        </div>
+        <div class="col-6">
+            <h1>Pregled aktivnih naročil</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+        </div>
+        <div class="col-2">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Domov</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Pregled naročil</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+        </div>
+        <div class="col-6">
+            <div>
+                <p>Na tej strani si lahko ogledate vsa naročila, ki ste jih poslali in preverite ali je bil paket že
+                    odposlan.</p>
+                <p>V primeru, da ste naročilo le oddali ne pa še plačali, prosim da to storite, saj pošiljka ne bo
+                    poslana dokler ni potrdila o plačilu. K plačilu prosim dodajte id številko naročila.</p>
+                <p>Pošljite na TRR12349368127346</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div>
+            <div class="mb-4">
+            </div>
+            <div>
+                <table class="table" "table align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id naročila</th>
+                            <th scope="col">Ime</th>
+                            <th scope="col">Priimek</th>
+                            <th scope="col">Naslov</th>
+                            <th scope="col">Poštna številka</th>
+                            <th scope="col">Cena</th>
+                            <th scope="col">Je plačano?</th>
+                            <th scope="col">Je odposlano</th>
+                            <th scope="col">Izdelki v košarici</th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {{#each rows}}
+
+                        <tr>
+                            <th scope="row">{{this.id_narocilo}}</th>
+                            <td>{{this.ime}}</td>
+                            <td>{{this.priimek}}</td>
+                            <td>{{this.naslov}}</td>
+                            <td>{{this.poštna_številka}}</td>
+                            <td>{{this.cena}}</td>
+                            <td>{{this.je_placano}}</td>
+                            <td>{{this.je_odposlano}}</td>
+
+                        </tr>
+
+
+
+                        {{/each}}
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>

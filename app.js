@@ -70,7 +70,12 @@ app.get('/o_nas', (req, res) => {
 app.get('/narocilo', (req, res) => {
     res.render('narocilo')
 });
-
+app.get('/pregled_nar_upo', (req, res) => {
+    res.render('pregled_nar_upo')
+});
+app.get('/pregled_nar_adm', (req, res) => {
+    res.render('pregled_nar_adm')
+});
 
 
 

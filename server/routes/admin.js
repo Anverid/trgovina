@@ -14,5 +14,4 @@ router.get('/admin_upo', adminController.view);
 
 
 
-
 module.exports = router;
