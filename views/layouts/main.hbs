@@ -42,9 +42,18 @@
                         <a class="nav-link" href="/dostava">Dostava</a>
                     </li>
                     {{#if loggedIn}}
+                    {{#if user.admin}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/pregled_nar_adm">Pregled-naročil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/admin_upo">Uporabniki</a>
+                    </li>
+                    {{else}}
                     <li class="nav-item">
                         <a class="nav-link" href="/pregled_nar_upo">Pregled-naročil</a>
                     </li>
+                    {{/if}}
                     <li class="nav-item">
                         <a class="nav-link" href="/odjava">Odjava</a>
                     </li>

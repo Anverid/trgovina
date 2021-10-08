@@ -29,7 +29,9 @@
         </div>
         <div class="col-6">
             <div>
-                <p>ADMINISTRATORSKI NAČIN</p>
+                <form action="/admin/espremnica" method="POST">
+                    <button type="submit" class="btn btn-primary">Izvoz za eSpremnico</button>
+                </form>
             </div>
         </div>
     </div>
@@ -53,7 +55,7 @@
                             <th scope="col">Datum plačila </th>
                             <th scope="col">Datum odprema</th>
                             <th scope="col">Izdelki v košarici</th>
-                            <th scope="col">Akcije</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -68,8 +70,26 @@
                             <td>{{this.poštna_številka}}</td>
                             <td>{{this.cena}}</td>
                             <td>{{this.datum_narocila_str}}</td>
-                            <td>{{this.datum_placila_str}}</td>
-                            <td>{{this.datum_odprema_str}}</td>
+                            <td>
+                                {{#if this.datum_placila}}
+                                {{this.datum_placila_str}}
+                                {{else}}
+                                <form action="/admin/narocilo_placano" method="POST">
+                                    <input type="hidden" name="id" value="{{this.id_narocilo}}">
+                                    <button type="submit" class="btn btn-primary">Označi kot plačano</button>
+                                </form>
+                                {{/if}}
+                            </td>
+                            <td>
+                                {{#if this.datum_odprema}}
+                                {{this.datum_odprema_str}}
+                                {{else}}
+                                <form action="/admin/narocilo_odpremljeno" method="POST">
+                                    <input type="hidden" name="id" value="{{this.id_narocilo}}">
+                                    <button type="submit" class="btn btn-primary">Označi kot odpremljeno</button>
+                                </form>
+                                {{/if}}
+                            </td>
                             <td>
                                 <ul>
                                     {{#each this.izdelki}}
@@ -77,7 +97,7 @@
                                     {{/each}}
                                 </ul>
                             </td>
-                            <td><button>IZBRIŠI</button><button>UREDI</button></td>
+
                         </tr>
 
 

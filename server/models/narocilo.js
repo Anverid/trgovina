@@ -82,3 +82,25 @@ exports.create = (data, callback) => {
         }
     );
 }
+
+exports.markPaid = (id, callback) => {
+    connection.query('UPDATE narocila SET datum_placila = CURRENT_DATE() WHERE id = ?', [id], (err, row) => {
+        if (err) {
+            console.log('Error while updating narocilo!', err);
+            callback(err, row);
+            return;
+        }
+        callback(err, row);
+    });
+}
+
+exports.markDispatched = (id, callback) => {
+    connection.query('UPDATE narocila SET datum_odprema = CURRENT_DATE() WHERE id = ?', [id], (err, row) => {
+        if (err) {
+            console.log('Error while updating narocilo!', err);
+            callback(err, row);
+            return;
+        }
+        callback(err, row);
+    });
+}
