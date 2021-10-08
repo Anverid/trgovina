@@ -22,3 +22,13 @@ exports.view_ord = (req, res) => {
         }
     });
 }
+exports.view_ord_adm = (req, res) => {
+    narocilo.get((err, rows) => {
+        if (!err) {
+            console.log(rows)
+            res.render('pregled_nar_adm', { rows, /*removedUser */ });
+        } else {
+            console.log(err);
+        }
+    });
+}

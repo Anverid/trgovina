@@ -29,8 +29,7 @@
                 <img src="../slike_izdelki/{{ this.slika_produkta }}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{this.ime_produkta}}</h5>
-                    <p class="card-text">{{this.opis_produkta}}</p>
-                    {{!-- <a href="/vsi_izdelki" class="btn btn-primary">Dodaj v košarico</a> --}}
+                    <p class="card-text">Cena: {{this.cena_na_100g_prod}} € na 100g</p>
                     <form action="dodaj_v_kosarico" method="POST" class="dodaj-kosarica-form">
                         <input type="hidden" class="kolicina" name="kolicina">
                         <input type="hidden" class="izdelek_id" name="izdelek_id" value="{{this.id}}">

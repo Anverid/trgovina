@@ -1,0 +1,97 @@
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+
+        </div>
+        <div class="col-6">
+            <h1>Pregled aktivnih naročil</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+        </div>
+        <div class="col-2">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Domov</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Pregled naročil</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+        </div>
+        <div class="col-6">
+            <div>
+                <p>ADMINISTRATORSKI NAČIN</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div>
+            <div class="mb-4">
+            </div>
+            <div>
+                <table class="table" "table align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id naročila</th>
+                            <th scope="col">Ime</th>
+                            <th scope="col">Priimek</th>
+                            <th scope="col">Naslov</th>
+                            <th scope="col">Poštna številka</th>
+                            <th scope="col">Cena</th>
+                            <th scope="col">Datum naročila</th>
+                            <th scope="col">Datum plačila </th>
+                            <th scope="col">Datum odprema</th>
+                            <th scope="col">Izdelki v košarici</th>
+                            <th scope="col">Akcije</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {{#each rows}}
+
+                        <tr>
+                            <th scope="row">{{this.id_narocilo}}</th>
+                            <td>{{this.ime}}</td>
+                            <td>{{this.priimek}}</td>
+                            <td>{{this.naslov}}</td>
+                            <td>{{this.poštna_številka}}</td>
+                            <td>{{this.cena}}</td>
+                            <td>{{this.datum_narocila_str}}</td>
+                            <td>{{this.datum_placila_str}}</td>
+                            <td>{{this.datum_odprema_str}}</td>
+                            <td>
+                                <ul>
+                                    {{#each this.izdelki}}
+                                    <li>{{this.kolicina}}x {{this.ime}}</li>
+                                    {{/each}}
+                                </ul>
+                            </td>
+                            <td><button>IZBRIŠI</button><button>UREDI</button></td>
+                        </tr>
+
+
+
+                        {{/each}}
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>

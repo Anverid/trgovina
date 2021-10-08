@@ -15,7 +15,7 @@
         <div class="col-2">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/home">Domov</a></li>
+                    <li class="breadcrumb-item"><a href="/">Domov</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Košarica</li>
                 </ol>
             </nav>
@@ -27,11 +27,21 @@
         <div class="col-2">
         </div>
         <div class="col-2">
-            <div>
-
-            </div>
+            <form action="oddaj_narocilo" method="POST" class="oddaj_narocilo_form">
+                <button type="submit" class="btn btn-primary">Kupi izdelke</button>
+            </form>
         </div>
+        <div class="col-4">
+
+            <div>
+                <p>Vaša košarica trenutno stane: {{this.cena}}€ !</p>
+            </div>
+
+        </div>
+
     </div>
+</div>
+<div class="mb-4">
 </div>
 <div class="container">
     <div class="row gy-4">
